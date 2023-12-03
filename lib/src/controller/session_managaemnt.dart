@@ -23,8 +23,10 @@ class SessionManager {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(builder: (context) {
-        return loggedIn ? const DashboardScreen() : SignInScreen();
+        return loggedIn ? const DashboardScreen() : LoginPage();
       }),
     );
   }
+
+  static isLoggedInStream() {}
 }

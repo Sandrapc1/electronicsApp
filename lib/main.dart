@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:user_signin/src/view/bottambar/bottamnavigation.dart';
 import 'package:user_signin/src/view/dashboard/home_screen.dart';
 import 'package:user_signin/src/view/signin/signin_screen.dart';
 import 'firebase_options.dart';
@@ -28,19 +29,17 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         textTheme: GoogleFonts.expletusSansTextTheme(Theme.of(context).textTheme),
       ),
-      home: FutureBuilder<bool>(
-        future: SessionManager.isLoggedIn(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            final bool loggedIn = snapshot.data ?? false;
-            return loggedIn ? const DashboardScreen() : SignInScreen();
-          } else {
-            return const Scaffold(
-              body: Center(child: CircularProgressIndicator()),
-            );
-          }
-        },
-      ),
+      home: StreamBuilder<bool>(
+  stream: SessionManager.isLoggedInStream(),  
+  builder: (context, snapshot) {
+    if (snapshot.connectionState == ConnectionState.active) {
+      final bool loggedIn = snapshot.data ?? false;
+      return loggedIn ? const DashboardScreen() : LoginPage();
+    } else {
+      return const MainScreen();
+    }
+  },
+),    
     );
   }
 }

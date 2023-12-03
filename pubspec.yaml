@@ -35,12 +35,12 @@ dependencies:
   firebase_storage: ^11.2.8
   flutter:
     sdk: flutter
-  flutter_facebook_auth: ^6.0.2
   flutter_form_builder: ^9.1.1
   fluttertoast: ^8.2.2
   get: null
   google_fonts: ^6.1.0
   google_sign_in: ^6.1.5
+  image_picker: ^1.0.4
   lottie: ^2.6.0
   order_tracker_zen: ^1.0.0+4
   shared_preferences: ^2.2.1

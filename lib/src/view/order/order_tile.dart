@@ -18,6 +18,7 @@ class OrderTile extends StatelessWidget {
       height: height * 0.1,
       width: width,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             height: height * 0.09,
@@ -55,7 +56,7 @@ class OrderTile extends StatelessWidget {
                   style: TextStyle(color: red, fontSize: 7),
                 )),
           ),
-          SizedBox(width: width * 0.01),
+          SizedBox(width: width * 0.02),
           IconButton(
               onPressed: () {
                 Get.to(const OrderTrack());

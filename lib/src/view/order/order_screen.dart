@@ -19,20 +19,23 @@ class OrderScreen extends StatelessWidget {
             const Text('Order', style: TextStyle(fontSize: 23, color: white)),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: height*0.02,),
-            const Text(
-              'Order Details',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: height * 0.02),
-            const Divider(),
-            OrderTile(height: height, width: width),
-            SizedBox(height: height * 0.02),
-            const Divider(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: height*0.02,),
+              const Text(
+                'Order Details',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: height * 0.02),
+              const Divider(),
+              OrderTile(height: height, width: width),
+              SizedBox(height: height * 0.02),
+              const Divider(),
+            ],
+          ),
         ),
       ),
     );

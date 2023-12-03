@@ -1,20 +1,11 @@
+
 import 'package:get/get.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-class SharedPreferencesController extends GetxController {
-  Future<void> saveUserData(String email, String password) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.getString('email');
-    prefs.getString('password');
-  }
+class LoginController {
+  RxBool obscureText=true.obs;
 
-  Future<String?> getEmail() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString('email');
+  void toggleLoginVisiblisty(){
+    obscureText.toggle();
   }
-
-  Future<String?> getPassword() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    return prefs.getString('password');
-  }
+  
 }

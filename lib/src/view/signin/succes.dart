@@ -26,7 +26,7 @@ class PasswordResetSuccessScreen extends StatelessWidget {
     const  Duration(
         milliseconds: 3000
       ), () {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignInScreen()), 
+        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => LoginPage()), 
         (route) => false);
        });
   }

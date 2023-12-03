@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:user_signin/src/view/dashboard/verticalImage.dart';
-import 'package:user_signin/src/view/dashboard/gridViewImage.dart';
+import 'gridViewImage.dart';
 import 'horizontalImage.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -38,7 +38,7 @@ class DashboardScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             horizontalImageList(),
-            const SizedBox(height: 20),
+            const SizedBox(height: 23),
             const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -51,6 +51,7 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 10),
             verticalImageList(),
             const SizedBox(height: 20),
             const Row(
@@ -65,6 +66,7 @@ class DashboardScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 5),
             gridViewImageList(context)
           ],
         ),

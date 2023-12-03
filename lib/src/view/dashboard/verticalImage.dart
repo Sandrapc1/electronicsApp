@@ -1,39 +1,49 @@
 import 'package:flutter/material.dart';
 import 'package:user_signin/core/colors.dart';
 
-List<Map<String, String>> categories = [
-  {'imagePath': 'assets/images/laptop.jpeg', 'productName': 'Laptop'},
-  {'imagePath': 'assets/images/boat-rockerz.png', 'productName': 'Headphone'},
-  {'imagePath': 'assets/images/z7-blue.jpg', 'productName': 'Phone'},
-  {'imagePath': 'assets/images/tv.jpeg', 'productName': 'TV'},
-];
+List brandsImage = [
+  'assets/images/sonybrand.png',
+  'assets/images/apple.png',
+  'assets/images/images.jpg',
+  'assets/images/99063297.jpg',
+ ];
 
 Widget verticalImageList() {
-  double itemHeight = 900.0 / categories.length; // Adjust the item height
+  double itemHeight = 110.0*brandsImage.length; 
 
   return SizedBox(
-    height: 230,
+    height:itemHeight,
     child: ListView.separated(
+      physics: const NeverScrollableScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Container(
-          height: itemHeight, // Set the height of each item
-          width: 80,
-          decoration: BoxDecoration(
+          // color: black,
+          height: 100, 
+          width: 140,
+          child: Stack(
+            alignment: Alignment.center,
+            children:[ Container(
+              height: 90,
+              width:220,
+               decoration: BoxDecoration(  
             border: Border.all(color: lightgrey),
             shape: BoxShape.rectangle,
             image: DecorationImage(
-              image: AssetImage(categories[index]['imagePath']!),
+              image: AssetImage(brandsImage[index]),
               fit: BoxFit.cover,
             ),
+          ),
+            ),
+            ]
           ),
         );
       },
       separatorBuilder: (context, index) {
-        return SizedBox(height: 10);
+        return const SizedBox(height: 10);
       },
-      itemCount: categories.length,
+      itemCount: brandsImage.length,
     ),
   );
 }
